@@ -82,41 +82,40 @@
             box-shadow: 0 8px 20px rgba(255, 127, 63, 0.3);
         }
 
+        /* Cover Photo Section */
+        .cover-photo {
+            width: 100%;
+            height: 60vh;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 255, 0.1) 100%);
+        }
+
         /* Hero Section */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 4rem;
+            text-align: center;
             padding: 4rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero-image-wrapper {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffd166 0%, #ffca3a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(255, 209, 102, 0.3);
-            position: relative;
-        }
-
-        .hero-image-wrapper img {
-            width: 90%;
-            height: 90%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
         }
 
         .hero-content h1 {
@@ -235,8 +234,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .cover-photo {
+                height: 50vh;
+                min-height: 400px;
+            }
+
             .hero {
-                grid-template-columns: 1fr;
                 padding: 2rem 5%;
             }
 
@@ -247,11 +250,6 @@
             .nav-links {
                 gap: 1rem;
                 font-size: 0.85rem;
-            }
-
-            .hero-image-wrapper {
-                width: 250px;
-                height: 250px;
             }
 
             .underline {
@@ -269,13 +267,13 @@
                 font-size: 0.75rem;
             }
 
-            .hero-content h1 {
-                font-size: 2rem;
+            .cover-photo {
+                height: 40vh;
+                min-height: 300px;
             }
 
-            .hero-image-wrapper {
-                width: 200px;
-                height: 200px;
+            .hero-content h1 {
+                font-size: 2rem;
             }
 
             .cta-button {
@@ -298,13 +296,14 @@
         <button class="cta-button">Get In Touch</button>
     </nav>
 
+    <!-- Cover Photo -->
+    <section class="cover-photo">
+        <img src="IMG_8759.jpg" alt="Rishabh Shah">
+        <div class="cover-overlay"></div>
+    </section>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-image">
-            <div class="hero-image-wrapper">
-                <img src="IMG_8759.jpg" alt="Rishabh Shah">
-            </div>
-        </div>
         <div class="hero-content">
             <h1>Hey, I'm <span>Rishabh</span> <span class="wave">👋</span></h1>
             <div class="underline"></div>
