@@ -15,10 +15,11 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background-color: #f9f7f4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
             color: #1a1a1a;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 400;
         }
 
         /* Navigation */
@@ -27,11 +28,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 5%;
-            background: white;
-            border-bottom: 1px solid #e0e0e0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
         }
 
         .logo {
@@ -67,19 +70,22 @@
         }
 
         .cta-button {
-            background: linear-gradient(135deg, #ff9b5a 0%, #ff7f3f 100%);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.875rem 2rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 153, 255, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 127, 63, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 153, 255, 0.35);
         }
 
         /* Cover Photo Section */
@@ -112,7 +118,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 255, 0.1) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
             z-index: 2;
             pointer-events: none;
         }
@@ -123,16 +129,17 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 4rem 5%;
-            max-width: 1400px;
+            padding: 5rem 5% 4rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            margin-bottom: 2rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
 
         .hero-content h1 span {
@@ -146,10 +153,12 @@
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 2rem;
-            line-height: 1.8;
+            font-size: 1.25rem;
+            color: #4a4a4a;
+            margin-bottom: 2.5rem;
+            line-height: 1.75;
+            max-width: 700px;
+            font-weight: 400;
         }
 
         .subtitle strong {
@@ -159,39 +168,41 @@
 
         .underline {
             display: inline-block;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(90deg, #00d4ff 0%, transparent 100%);
-            width: 200px;
-            margin: 1rem 0;
+            width: 120px;
+            margin: 1.5rem 0 2rem;
         }
 
         /* Features */
         .features {
-            padding: 4rem 5%;
-            max-width: 1400px;
+            padding: 6rem 5%;
+            max-width: 1200px;
             margin: 0 auto;
+            background-color: #fafafa;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .feature-card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            border-color: #00a8cc;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 168, 204, 0.3);
         }
 
         .feature-icon {
@@ -200,14 +211,17 @@
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: #1a1a1a;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .feature-card p {
             color: #666;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         /* Footer */
@@ -265,6 +279,11 @@
             .underline {
                 width: 150px;
             }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -320,17 +339,13 @@
             <p class="subtitle">
                 I'm a <strong>Chemical Engineer</strong> passionate about the <strong>biotech and fintech industries</strong>, where innovation meets real-world impact.
             </p>
-            <p class="subtitle" style="color: #888; font-size: 1rem; margin-top: 2rem;">
-                I bridge the gap between engineering principles and cutting-edge technology to solve complex problems and drive meaningful change.
-            </p>
             <button class="cta-button" style="margin-top: 2rem;">View My Work</button>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features" id="about">
-        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">My Focus Areas</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 3rem;">Where engineering meets innovation</p>
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; font-weight: 700; color: #1a1a1a;">My Focus Areas</h2>
         
         <div class="features-grid">
             <div class="feature-card">
@@ -347,11 +362,6 @@
                 <div class="feature-icon">⚗️</div>
                 <h3>Chemical Engineering</h3>
                 <p>Leveraging core engineering fundamentals to design processes, optimize systems, and solve complex technical challenges.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Innovation</h3>
-                <p>Bridging multiple disciplines to create transformative solutions that address real-world problems in emerging industries.</p>
             </div>
         </div>
     </section>
