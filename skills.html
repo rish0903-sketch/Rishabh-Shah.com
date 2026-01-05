@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Rishabh Shah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f9f7f4;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00a8cc;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff9b5a 0%, #ff7f3f 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 127, 63, 0.3);
+        }
+
+        /* Page Content */
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .skills-section {
+            margin-bottom: 4rem;
+        }
+
+        .skills-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: #00a8cc;
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: #666;
+            font-size: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: "✓ ";
+            color: #00a8cc;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #00a8cc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff7f3f;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .skill-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">⚡ Rishabh Shah</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+        <button class="cta-button">Get In Touch</button>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-header">
+            <h1>My Skills</h1>
+            <p>Chemical Engineering Expertise & Industry Knowledge</p>
+        </div>
+
+        <div class="skills-section">
+            <h2>Chemical Engineering Core</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">⚗️</div>
+                    <h3>Process Engineering</h3>
+                    <ul class="skill-list">
+                        <li>Process Design & Optimization</li>
+                        <li>Chemical Reactors</li>
+                        <li>Separation Processes</li>
+                        <li>Heat & Mass Transfer</li>
+                        <li>Process Simulation</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Analysis & Modeling</h3>
+                    <ul class="skill-list">
+                        <li>Data Analysis</li>
+                        <li>Mathematical Modeling</li>
+                        <li>Statistical Analysis</li>
+                        <li>Process Control</li>
+                        <li>Quality Assurance</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔧</div>
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>CAD & Process Design Tools</li>
+                        <li>Simulation Software</li>
+                        <li>Laboratory Techniques</li>
+                        <li>Project Management</li>
+                        <li>Technical Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Biotechnology</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🔬</div>
+                    <h3>Biotech Applications</h3>
+                    <ul class="skill-list">
+                        <li>Bioprocess Engineering</li>
+                        <li>Pharmaceutical Manufacturing</li>
+                        <li>Biomedical Devices</li>
+                        <li>Quality Systems</li>
+                        <li>Regulatory Understanding</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧬</div>
+                    <h3>Research & Development</h3>
+                    <ul class="skill-list">
+                        <li>R&D Methodologies</li>
+                        <li>Experimental Design</li>
+                        <li>Technology Transfer</li>
+                        <li>Scale-up Processes</li>
+                        <li>Innovation in Healthcare</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Financial Technology</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">💼</div>
+                    <h3>Fintech Understanding</h3>
+                    <ul class="skill-list">
+                        <li>Financial Systems Analysis</li>
+                        <li>Technology in Finance</li>
+                        <li>Data-driven Solutions</li>
+                        <li>System Design Principles</li>
+                        <li>Financial Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Innovation & Strategy</h3>
+                    <ul class="skill-list">
+                        <li>Innovation Management</li>
+                        <li>Problem-solving</li>
+                        <li>Systems Thinking</li>
+                        <li>Cross-disciplinary Applications</li>
+                        <li>Emerging Technologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rishabh Shah. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#linkedin">LinkedIn</a>
+            <a href="#github">GitHub</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#email">Email</a>
+        </div>
+    </footer>
+</body>
+</html>
+

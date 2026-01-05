@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Rishabh Shah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f9f7f4;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00a8cc;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff9b5a 0%, #ff7f3f 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 127, 63, 0.3);
+        }
+
+        /* Page Content */
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .content-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #00a8cc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff7f3f;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-section {
+                padding: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">⚡ Rishabh Shah</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+        <button class="cta-button">Get In Touch</button>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-header">
+            <h1>About Me</h1>
+            <p>Chemical Engineer | Biotech & Fintech Enthusiast</p>
+        </div>
+
+        <div class="content-section">
+            <h2>My Journey</h2>
+            <p>
+                I'm a <strong>Chemical Engineer</strong> with a deep passion for innovation at the intersection of biotechnology and financial technology. My journey has been driven by a curiosity to understand how engineering principles can be applied to solve complex problems in emerging industries.
+            </p>
+            <p>
+                With a strong foundation in chemical engineering, I've developed a unique perspective that allows me to bridge traditional engineering practices with cutting-edge technologies. I'm fascinated by how biotech can revolutionize healthcare and how fintech can democratize financial services.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <div class="two-column">
+                <div>
+                    <h2>My Passion: Biotech</h2>
+                    <p>
+                        The biotechnology industry represents the future of healthcare and life sciences. I'm excited about how engineering principles can be applied to develop innovative solutions that improve lives, from pharmaceutical development to medical device design.
+                    </p>
+                </div>
+                <div>
+                    <h2>My Interest: Fintech</h2>
+                    <p>
+                        Financial technology is transforming how we interact with money and financial services. I'm drawn to how engineering approaches can create more accessible, efficient, and secure financial systems that benefit everyone.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>My Approach</h2>
+            <p>
+                I believe in combining <strong>analytical thinking</strong> with <strong>creative problem-solving</strong>. Whether working on a biotech project or exploring fintech solutions, I apply systematic engineering methodologies while staying open to innovative approaches.
+            </p>
+            <p>
+                My goal is to contribute to projects that make a meaningful impact, whether that's advancing healthcare through biotechnology or improving financial accessibility through technology. I'm always eager to learn, collaborate, and push the boundaries of what's possible.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rishabh Shah. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#linkedin">LinkedIn</a>
+            <a href="#github">GitHub</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#email">Email</a>
+        </div>
+    </footer>
+</body>
+</html>
+
