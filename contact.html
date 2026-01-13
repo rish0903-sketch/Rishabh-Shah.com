@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishabh Shah</title>
+    <title>Contact - Rishabh Shah</title>
     <style>
         /* ============================================
            GLOBAL RESET & BASE STYLES
@@ -76,50 +76,20 @@
         }
 
         /* ============================================
-           COVER PHOTO SECTION
+           PAGE CONTENT
            ============================================ */
-        .cover-photo {
-            width: 100%;
-            height: 60vh;
-            min-height: 500px;
-            position: relative;
-            overflow: hidden;
-            background-color: #f0f0f0;
-            background-image: url('./images/IMG_8759.jpg');
-            background-size: cover;
-            background-position: center 60%;
-            background-repeat: no-repeat;
-            display: block;
-        }
-
-        /* Cover photo image - ensures proper display */
-        .cover-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 60%;
-            display: block;
-            min-height: 500px;
-        }
-
-        /* Overlay removed for clean aesthetic */
-        .cover-overlay {
-            display: none;
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            padding: 8rem 5% 6rem;
+        .page-content {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 8rem 5% 6rem;
         }
 
-        /* Main hero heading - large, bold, minimal */
-        .hero-content h1 {
+        /* Page header section */
+        .page-header {
+            margin-bottom: 6rem;
+        }
+
+        .page-header h1 {
             font-size: 4.5rem;
             font-weight: 400;
             margin-bottom: 2rem;
@@ -128,79 +98,24 @@
             color: #000000;
         }
 
-        .hero-content h1 span {
-            color: #000000;
-        }
-
-        /* Wave emoji hidden for clean look */
-        .hero-content .wave {
-            display: none;
-        }
-
-        /* Subtitle text - removed as per request */
-        .subtitle {
-            display: none;
-        }
-
-        .subtitle strong {
-            color: #000000;
-            font-weight: 400;
-        }
-
-        /* Underline decorative element - hidden */
-        .underline {
-            display: none;
-        }
-
-        /* ============================================
-           FEATURES / FOCUS AREAS SECTION
-           ============================================ */
-        .features {
-            padding: 0 5% 8rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #ffffff;
-        }
-
-        /* Section heading styling */
-        .features h2 {
+        .page-header p {
             font-size: 1.1rem;
-            font-weight: 400;
             color: #666666;
-            margin-bottom: 4rem;
-            letter-spacing: 0.02em;
+            line-height: 1.7;
+            max-width: 600px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
 
-        /* Grid layout for focus area cards */
-        .features-grid {
+        /* Contact information section */
+        .contact-info {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem 3rem;
-            margin-top: 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
         }
 
-        /* Individual feature card - minimal, no borders */
-        .feature-card {
-            background: transparent;
-            padding: 0;
-            border: none;
-            transition: none;
-            cursor: default;
-        }
-
-        .feature-card:hover {
-            transform: none;
-            box-shadow: none;
-            border: none;
-        }
-
-        /* Icons hidden for clean aesthetic */
-        .feature-icon {
-            display: none;
-        }
-
-        /* Feature card heading */
-        .feature-card h3 {
+        .contact-item h3 {
             font-size: 1.1rem;
             margin-bottom: 0.75rem;
             color: #000000;
@@ -208,12 +123,18 @@
             letter-spacing: 0.01em;
         }
 
-        /* Feature card description text */
-        .feature-card p {
+        .contact-item p,
+        .contact-item a {
             color: #666666;
             font-size: 0.95rem;
             line-height: 1.7;
             font-weight: 400;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.6;
         }
 
         /* ============================================
@@ -230,17 +151,11 @@
             margin-right: auto;
         }
 
-        /* Footer copyright text */
         footer p {
             color: #666666;
             margin-bottom: 0;
             font-size: 0.9rem;
             font-weight: 400;
-        }
-
-        /* Social links hidden for minimal design */
-        .social-links {
-            display: none;
         }
 
         /* ============================================
@@ -256,26 +171,17 @@
                 font-size: 0.9rem;
             }
 
-            .cover-photo {
-                height: 50vh;
-                min-height: 400px;
-            }
-
-            .hero {
+            .page-content {
                 padding: 4rem 5% 4rem;
             }
 
-            .hero-content h1 {
+            .page-header h1 {
                 font-size: 2.5rem;
             }
 
-            .features {
-                padding: 0 5% 6rem;
-            }
-
-            .features-grid {
+            .contact-info {
                 grid-template-columns: 1fr;
-                gap: 3rem 0;
+                gap: 3rem;
             }
         }
 
@@ -292,21 +198,16 @@
                 font-size: 0.85rem;
             }
 
-            .cover-photo {
-                height: 40vh;
-                min-height: 300px;
-            }
-
-            .hero {
+            .page-content {
                 padding: 3rem 5% 3rem;
             }
 
-            .hero-content h1 {
+            .page-header h1 {
                 font-size: 2rem;
             }
 
-            .features-grid {
-                gap: 2.5rem 0;
+            .contact-info {
+                gap: 2.5rem;
             }
         }
     </style>
@@ -327,46 +228,33 @@
     </nav>
 
     <!-- ============================================
-         COVER PHOTO SECTION
+         PAGE CONTENT
          ============================================ -->
-    <section class="cover-photo">
-        <img src="./images/IMG_8759.jpg" alt="Rishabh Shah" loading="eager" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        <div class="cover-overlay"></div>
-    </section>
-
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Chemical Engineer passionate about biotech and fintech.</h1>
+    <div class="page-content">
+        <div class="page-header">
+            <h1>Contact</h1>
+            <p>I'd love to hear from you — reach out for a friendly hello!</p>
         </div>
-    </section>
 
-    <!-- ============================================
-         FOCUS AREAS SECTION
-         ============================================ -->
-    <section class="features" id="about">
-        <h2>My Focus Areas</h2>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3>Biotechnology</h3>
-                <p>Exploring the intersection of biological sciences and engineering to develop solutions that improve lives and advance healthcare.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="mailto:your.email@example.com">your.email@example.com</a>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">💼</div>
-                <h3>Financial Technology</h3>
-                <p>Applying engineering principles to financial systems, creating innovative solutions that make financial services more accessible and efficient.</p>
+            <div class="contact-item">
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚗️</div>
-                <h3>Chemical Engineering</h3>
-                <p>Leveraging core engineering fundamentals to design processes, optimize systems, and solve complex technical challenges.</p>
+            <div class="contact-item">
+                <h3>GitHub</h3>
+                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+            </div>
+            <div class="contact-item">
+                <h3>Location</h3>
+                <p>Available for opportunities worldwide</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- ============================================
          FOOTER
