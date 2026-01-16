@@ -102,11 +102,6 @@
             min-height: 500px;
         }
 
-        /* Overlay removed for clean aesthetic */
-        .cover-overlay {
-            display: none;
-        }
-
         /* ============================================
            HERO SECTION
            ============================================ */
@@ -122,34 +117,33 @@
         .hero-content h1 {
             font-size: 4.5rem;
             font-weight: 400;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             line-height: 1.1;
             letter-spacing: -0.03em;
             color: #000000;
         }
 
-        .hero-content h1 span {
+        /* ============================================
+           SOCIAL MEDIA LINKS
+           ============================================ */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
             color: #000000;
-        }
-
-        /* Wave emoji hidden for clean look */
-        .hero-content .wave {
-            display: none;
-        }
-
-        /* Subtitle text - removed as per request */
-        .subtitle {
-            display: none;
-        }
-
-        .subtitle strong {
-            color: #000000;
+            text-decoration: none;
+            font-size: 0.95rem;
             font-weight: 400;
+            transition: opacity 0.2s ease;
+            letter-spacing: 0.01em;
         }
 
-        /* Underline decorative element - hidden */
-        .underline {
-            display: none;
+        .social-links a:hover {
+            opacity: 0.6;
         }
 
         /* ============================================
@@ -183,20 +177,6 @@
         .feature-card {
             background: transparent;
             padding: 0;
-            border: none;
-            transition: none;
-            cursor: default;
-        }
-
-        .feature-card:hover {
-            transform: none;
-            box-shadow: none;
-            border: none;
-        }
-
-        /* Icons hidden for clean aesthetic */
-        .feature-icon {
-            display: none;
         }
 
         /* Feature card heading */
@@ -238,11 +218,6 @@
             font-weight: 400;
         }
 
-        /* Social links hidden for minimal design */
-        .social-links {
-            display: none;
-        }
-
         /* ============================================
            RESPONSIVE DESIGN - TABLET
            ============================================ */
@@ -277,6 +252,10 @@
                 grid-template-columns: 1fr;
                 gap: 3rem 0;
             }
+
+            .social-links {
+                gap: 1.5rem;
+            }
         }
 
         /* ============================================
@@ -308,6 +287,11 @@
             .features-grid {
                 gap: 2.5rem 0;
             }
+
+            .social-links {
+                gap: 1.25rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -331,7 +315,6 @@
          ============================================ -->
     <section class="cover-photo">
         <img src="./images/IMG_8759.jpg" alt="Rishabh Shah" loading="eager" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        <div class="cover-overlay"></div>
     </section>
 
     <!-- ============================================
@@ -339,7 +322,12 @@
          ============================================ -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Chemical Engineer passionate about biotech and fintech and food.</h1>
+            <h1>Chemical Engineer passionate about biotech and finanical markets.</h1>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
         </div>
     </section>
 
@@ -351,17 +339,14 @@
         
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🔬</div>
                 <h3>Biotechnology</h3>
                 <p>Exploring the intersection of biological sciences and engineering to develop solutions that improve lives and advance healthcare.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💼</div>
                 <h3>Financial Biotech Markets</h3>
-                <p>Connecting scientific pipelines to markets by analyzing how clinical milestones, regulatory risk, and R&D productivity drive valuation, capital allocation, and long‑term returns in biotech companies.</p>
+                <p>Connecting drug development pipelines to markets by analyzing how scientific KPIs drive valuation, capital allocation, and long‑term returns in biotech companies.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">⚗️</div>
                 <h3>Chemical Engineering</h3>
                 <p>Leveraging core engineering fundamentals to design processes, optimize systems, and solve complex technical challenges.</p>
             </div>
