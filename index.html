@@ -326,7 +326,7 @@
             <div class="social-links">
                 <a href="https://linkedin.com/in/rishabh-s-9226711a7" target="_blank">LinkedIn</a>
                 <a href="https://github.com/rish0903-sketch" target="_blank">GitHub</a>
-                <a href="mailto:rish0903@gmail.com?subject=Contact from Portfolio" id="email-link" onclick="handleEmailClick(event)">Email</a>
+                <a href="contact.html">Email</a>
             </div>
         </div>
     </section>
@@ -360,44 +360,5 @@
         <p>&copy; 2025 Rishabh Shah</p>
     </footer>
 
-    <script>
-        // Handle email link click - tries mailto first, then copies to clipboard as fallback
-        function handleEmailClick(event) {
-            const email = 'rish0903@gmail.com';
-            
-            // Try to open mailto link
-            const mailtoLink = `mailto:${email}?subject=Contact from Portfolio`;
-            
-            // Check if mailto is supported and try to open it
-            try {
-                window.location.href = mailtoLink;
-                
-                // Fallback: if nothing happens after a short delay, copy to clipboard
-                setTimeout(() => {
-                    // Copy email to clipboard as fallback
-                    if (navigator.clipboard && navigator.clipboard.writeText) {
-                        navigator.clipboard.writeText(email).then(() => {
-                            alert('Email address copied to clipboard: ' + email);
-                        }).catch(() => {
-                            // If clipboard fails, just show the email
-                            prompt('Email address:', email);
-                        });
-                    } else {
-                        // Fallback for older browsers
-                        prompt('Email address:', email);
-                    }
-                }, 500);
-            } catch (e) {
-                // If mailto fails, copy to clipboard
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(email).then(() => {
-                        alert('Email address copied to clipboard: ' + email);
-                    });
-                } else {
-                    prompt('Email address:', email);
-                }
-            }
-        }
-    </script>
 </body>
 </html>

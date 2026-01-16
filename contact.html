@@ -107,12 +107,89 @@
             letter-spacing: 0.01em;
         }
 
-        /* Contact information section */
+        /* ============================================
+           CONTACT FORM
+           ============================================ */
+        .contact-form {
+            max-width: 600px;
+            margin-top: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            color: #000000;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 0;
+            border: none;
+            border-bottom: 1px solid #000000;
+            background: transparent;
+            color: #000000;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 400;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: #666666;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: transparent;
+            border: 1px solid #000000;
+            color: #000000;
+            padding: 0.875rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.01em;
+            margin-top: 1rem;
+        }
+
+        .submit-button:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .form-message {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #666666;
+            display: none;
+        }
+
+        .form-message.success {
+            color: #000000;
+        }
+
+        /* ============================================
+           CONTACT INFO SECTION
+           ============================================ */
         .contact-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 4rem;
-            margin-top: 4rem;
+            margin-top: 6rem;
         }
 
         .contact-item h3 {
@@ -236,18 +313,37 @@
             <p>I'd love to hear from you — reach out for a friendly hello!</p>
         </div>
 
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+            <div class="form-message" id="formMessage"></div>
+        </form>
+
+        <!-- Contact Information -->
         <div class="contact-info">
             <div class="contact-item">
                 <h3>Email</h3>
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="mailto:rish0903@gmail.com">rish0903@gmail.com</a>
             </div>
             <div class="contact-item">
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+                <a href="https://linkedin.com/in/rishabh-s-9226711a7" target="_blank">linkedin.com/in/rishabh-s-9226711a7</a>
             </div>
             <div class="contact-item">
                 <h3>GitHub</h3>
-                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                <a href="https://github.com/rish0903-sketch" target="_blank">github.com/rish0903-sketch</a>
             </div>
             <div class="contact-item">
                 <h3>Location</h3>
@@ -262,5 +358,36 @@
     <footer>
         <p>&copy; 2025 Rishabh Shah</p>
     </footer>
+
+    <script>
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('Contact from Portfolio - ' + name);
+            const body = encodeURIComponent('Name: ' + name + '\n\nEmail: ' + email + '\n\nMessage:\n' + message);
+            const mailtoLink = 'mailto:rish0903@gmail.com?subject=' + subject + '&body=' + body;
+            
+            // Try to open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            formMessage.textContent = 'Opening your email client... If it doesn\'t open, please email rish0903@gmail.com directly.';
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            
+            // Reset form after a delay
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+                formMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
